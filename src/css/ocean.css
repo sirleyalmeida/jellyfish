@@ -1,4 +1,3 @@
-@import './styles.css';
 
 .surface {
   mix-blend-mode: overlay;
@@ -249,5 +248,15 @@
 @media (min-aspect-ratio: 5/1) {
   :root {
     --ratioW: 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .surface::before,
+  .surface::after,
+  .caustics::before,
+  .caustics::after {
+    opacity: 0.15;
+    animation-duration: calc(var(--duration) * 1.4);
   }
 }

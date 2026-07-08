@@ -606,3 +606,44 @@
                 transform: translateY(-20vh) translateX(-20px) scale(var(--jelly-scale, 1));
     }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+    .jellyfish,
+    .tentacles span,
+    .tentacles span:before,
+    .tentacles span:after,
+    .teardrop,
+    .bulb {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .jellyfish-container {
+        overflow: hidden;
+    }
+
+    .jellyfish {
+        animation-duration: calc(var(--float-duration, 18s) * 1.4);
+    }
+
+    .first-wrapper,
+    .second-wrapper,
+    .third-wrapper,
+    .fourth-wrapper,
+    .fifth-wrapper,
+    .sixth-wrapper,
+    .seventh-wrapper,
+    .eighth-wrapper {
+        filter: none;
+    }
+
+    .tentacles span,
+    .tentacles span:before,
+    .tentacles span:after {
+        opacity: 0.7;
+        box-shadow: none;
+    }
+}
