@@ -1,5 +1,3 @@
-@import './styles.css';
-
 .jellyfish-container {
     position: absolute;
     top: 0;
@@ -21,8 +19,9 @@
     --jelly-size: clamp(64px, 9vw, 140px);
     width: var(--jelly-size);
     height: var(--jelly-size);
-    animation: float-up linear infinite;
-    animation-delay: -18s;
+    animation: float-up var(--float-duration, 18s) linear infinite;
+    animation-delay: var(--float-delay, 0s);
+    animation-iteration-count: infinite;
 }
 
 .first-wrapper {
