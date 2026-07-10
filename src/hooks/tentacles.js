@@ -5,6 +5,8 @@
   const spans = Array.from(document.querySelectorAll('.jellyfish .tentacles span'));
 
   const animated = isSmall ? spans.filter((s, i) => i % 2 === 0) : spans;
+  const jellyfish = Array.from(document.querySelectorAll('.jellyfish'));
+  let endedCount = 0;
 
   const items = animated.map((el)=>({
     el,
@@ -26,6 +28,9 @@
     requestAnimationFrame(frame);
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ()=>requestAnimationFrame(frame));
-  else requestAnimationFrame(frame);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(frame));
+  } else {
+    requestAnimationFrame(frame);
+  }
 })();
